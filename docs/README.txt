@@ -9,13 +9,13 @@ I want to be able to see all payments
 I want to be able to see available accounts
 
 ## settup database connection config file
-<(project root path)> /hometest.globalgroup.com/bckend/config/base_config.json
+<(project root path)> /hometest.globalgroup.com/backend/config/base_config.json
 
 ## api docs 
 
 <(project root path)>/docs/api.md
 
-## Postman online docsAPI
+## Postman online api docs
 
 https://documenter.getpostman.com/view/13738369/UVsFy8J2
 
