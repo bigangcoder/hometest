@@ -6,7 +6,7 @@
 https://documenter.getpostman.com/view/13738369/UVsFzovo
 
 
-# IMAGE LOCAL TEST (need to download source code from gitub)
+# IMAGE LOCAL TEST (need to download image from docker hub)
 ## download image:(centos amd64x  version)
 $ docker pull bigangcoder/hometest:0.91
 $ docker run -p 9091:8080 bigangcoder/hometest:0.91
