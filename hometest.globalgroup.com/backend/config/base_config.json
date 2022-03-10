@@ -1,8 +1,8 @@
 {
-    "dbUser": "test2022mar_usr",
-    "dbPassword": "dedkefjkefj123(*&(&@#@32",
-    "dbName": "test2022mar",
-    "dbHost": "8.131.60.249",
-    "dbPort": 32308,
-    "dialect": "mysql"
+    "dbUser": "postgres",
+    "dbPassword": "postgres",
+    "dbName": "postgres",
+    "dbHost": "8.140.112.64",
+    "dbPort": 32543,
+    "dialect": "postgres"
 }

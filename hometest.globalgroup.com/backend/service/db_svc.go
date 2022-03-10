@@ -11,43 +11,45 @@ import (
 	"Testprj03/hometest.globalgroup.com/backend/dao"
 
 	"github.com/go-orm/gorm"
-	_ "github.com/go-orm/gorm/dialects/mysql"
+	_ "github.com/go-orm/gorm/dialects/postgres"
 )
 
 var baseConfigType dao.BaseConfigType
 var connectionUrl string
 
 func init() {
-
 	loadJsonConfig()
-	connectionUrl = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True", baseConfigType.DBUser, baseConfigType.DBPassword, baseConfigType.DBHost, baseConfigType.DBPort, baseConfigType.DBName)
+	connectionUrl = fmt.Sprintf("host=%s port=%d user=%s dbname=%s password=%s sslmode=disable TimeZone=Asia/Shanghai", baseConfigType.DBHost, baseConfigType.DBPort, baseConfigType.DBUser, baseConfigType.DBName, baseConfigType.DBPassword)
 }
-
+func getConnection() (db *gorm.DB, err error) {
+	db, err = gorm.Open(baseConfigType.Dialect, connectionUrl)
+	return
+}
 func getAccounts() (dao.AccountListType, error) {
 	accountList := dao.AccountListType{}
 	accountList.Accounts = make([]dao.Account, 0)
-	db, err := gorm.Open(baseConfigType.Dialect, connectionUrl)
+	db, err := getConnection()
+	defer db.Close()
 	if err != nil {
 		return accountList, err
 	}
-	defer db.Close()
+
 	db.Raw("SELECT * FROM user_account WHERE disabled=0").Scan(&accountList.Accounts)
 	return accountList, nil
 }
 func getPayments() (paymentList dao.PaymentListType) {
 	paymentList.Payments = make([]dao.PaymentType, 0)
-	db, err := gorm.Open(baseConfigType.Dialect, connectionUrl)
+	db, err := getConnection()
 	if err != nil {
 		panic(fmt.Sprintf("database connection error:%#v", err))
 	}
 	defer db.Close()
 	db.Raw("SELECT * FROM user_payment WHERE disabled=0").Scan(&paymentList.Payments)
-	fmt.Println("paymentListType:", paymentList)
 	return
 }
 
 func sendPayment(req dao.SendPaymentRequestType) (dao.SendPaymentResponseType, error) {
-	db, err := gorm.Open(baseConfigType.Dialect, connectionUrl)
+	db, err := getConnection()
 	if err != nil {
 		panic(fmt.Sprintf("database connection error:%#v", err))
 	}
