@@ -8,7 +8,7 @@ https://documenter.getpostman.com/view/13738369/UVsFzovo
 
 # IMAGE LOCAL TEST (need to download image from docker hub)
 ## download image:(centos amd64x  version)
-$ docker pull bigangcoder/hometest:0.91
+$ docker pull bigangcoder/hometest:0.91<br/>
 $ docker run -p 9091:8080 bigangcoder/hometest:0.91
 
 # SOURCE CODE LOCAL TEST(nedd to download source code from github)
