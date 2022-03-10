@@ -2,10 +2,16 @@
 #code linting, start contributing
 
 
-# QUICK ONLINE TEST
+# QUICK ONLINE API DOCS (can access directly on your web browser)
+https://documenter.getpostman.com/view/13738369/UVsFzovo
 
 
-# LOCAL TEST (need to download source code)
+# IMAGE LOCAL TEST (need to download source code from gitub)
+## download image:(centos amd64x  version)
+## $ docker pull bigangcoder/hometest:0.91
+# SOURCE CODE LOCAL TEST(nedd to download source code from github)
+https://github.com/bigangcoder/hometest
+
 
 
 ## project purpose  :three user stories that should be covered:
@@ -17,14 +23,13 @@ I want to be able to see available accounts
 ## settup database connection config file
 <(project root path)> /hometest.globalgroup.com/backend/config/base_config.json
 
-## api docs 
+## local api docs 
 
 <(project root path)>/docs/api.md
 
-## Postman online api docs
+## Postman online api docs (for local runnable version   ex: 127.0.0.1 )
 
 https://documenter.getpostman.com/view/13738369/UVsFy8J2
-
 
 ## database init sql file 
 
