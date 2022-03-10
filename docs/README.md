@@ -2,6 +2,12 @@
 #code linting, start contributing
 
 
+# QUICK ONLINE TEST
+
+
+# LOCAL TEST (need to download source code)
+
+
 ## project purpose  :three user stories that should be covered:
 
 I want to be able to send a payment from one account to another (same currency)
