@@ -20,9 +20,11 @@ https://github.com/bigangcoder/hometest
 ## project purpose  :three user stories that should be covered:
 
 I want to be able to send a payment from one account to another (same currency)
+<br>
 I want to be able to see all payments
+<br>
 I want to be able to see available accounts
-
+<br>
 ## settup database connection config file
 <(project root path)> /hometest.globalgroup.com/backend/config/base_config.json
 
