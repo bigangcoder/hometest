@@ -41,7 +41,7 @@ request URL ：[/api/v1/account](#)
 
 | field    | type         | required             | comment |
 | -------- | ------------ | -------------------- | ------- |
-| accounts | struct slice | [click](#1.accounts) |
+| accounts | struct slice | [Click](#1.accounts) |
 
 <a id="1.accounts"></a> 
 ##### accounts 
@@ -95,9 +95,9 @@ request URL ：[/api/v1/payment](#)
 ```
 #### response params
 
-| field    | type       | required            | comment |
-| -------- | ---------- | ------------------- | ------- |
-| payments | 结构体数组 | [点我](#2.payments) |
+| field    | type         | required             | comment |
+| -------- | ------------ | -------------------- | ------- |
+| payments | struct slice | [Click](#2.payments) |
 
 <a id="2.payments"></a> 
 ##### payments 
@@ -126,6 +126,7 @@ request URL ：[/api/v1/account/0](#)
 #### request
 ```json
  {
+	"token": "",
 	"account": "",
 	"amount": 0,
 	"to_account": ""
@@ -135,6 +136,7 @@ request URL ：[/api/v1/account/0](#)
 
 | field     | type   | required | comment                                                                                                          |
 | --------- | ------ | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| token     | string | Y        | a token to HTTP requests in order to authenticate them                                                           |
 | account   | string | Y        | user account (outgoing)                                                                                          |
 | amount    | int    | Y        | the amount to be tranfering (should be in the same currency),unit:us dollar cents , one dolar is equal 100 cents |
 | toAccount | string | Y        | user account (incomming)                                                                                         |

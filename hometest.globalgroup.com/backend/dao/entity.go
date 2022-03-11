@@ -34,7 +34,6 @@ type PaymentListType struct {
 }
 
 type PaymentType struct {
-	Token       string `json:"token"  gorm:"-" doc:"a token to HTTP requests in order to authenticate them required"`
 	Id          int    `json:"id"`
 	Account     string `json:"account"`
 	Amount      int    `json:"amount" doc:"unit:us dollar cents , one dolar is equal to 100 cents "`
@@ -45,6 +44,7 @@ type PaymentType struct {
 }
 
 type SendPaymentRequestType struct {
+	Token     string `json:"token"  gorm:"-" doc:"a token to HTTP requests in order to authenticate them required"`
 	Account   string `json:"account" doc:"user account (outgoing) required"`
 	Amount    int    `json:"amount" doc:"the amount to be tranfering (should be in the same currency),unit:us dollar cents , one dolar is equal 100 cents required"`
 	ToAccount string `json:"to_account" doc:"user account (incomming) required"`
