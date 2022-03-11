@@ -34,6 +34,7 @@ type PaymentListType struct {
 }
 
 type PaymentType struct {
+	Token       string `json:"token"  gorm:"-" doc:"a token to HTTP requests in order to authenticate them required"`
 	Id          int    `json:"id"`
 	Account     string `json:"account"`
 	Amount      int    `json:"amount" doc:"unit:us dollar cents , one dolar is equal to 100 cents "`
